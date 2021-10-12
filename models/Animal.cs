@@ -1,8 +1,11 @@
 namespace TrabalhoProgAvan2.models
 {
-    public class Animal
+    public abstract class Animal
     {
-        
-        
+        protected Taxonomia taxonomia;
+
+        public virtual void locomover() {
+
+        } 
     }
 }
