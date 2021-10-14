@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿using TrabalhoProgAvan2.models;
 namespace TrabalhoProgAvan2
 {
     class Program
@@ -7,7 +6,8 @@ namespace TrabalhoProgAvan2
         static void Main(string[] args)
         {
             Controlador controlador = new Controlador();
-            controlador.Iniciar();
+            Recomendacao recomendacao= new Recomendacao();
+            controlador.Iniciar(recomendacao);
         }
     }
 }

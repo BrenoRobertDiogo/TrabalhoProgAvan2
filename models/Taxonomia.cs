@@ -11,7 +11,8 @@ namespace TrabalhoProgAvan2.models
         public string genero { get; set; }
         public string especie { get; set; }
 
-        public Taxonomia(string dominio, string reino, string filo, string classe, string ordem, string familia, string genero, string especie) {
+        public Taxonomia(string dominio, string reino, string filo, string classe, string ordem, string familia, string genero, string especie)
+        {
             this.dominio = dominio;
             this.reino = reino;
             this.filo = filo;
@@ -20,6 +21,17 @@ namespace TrabalhoProgAvan2.models
             this.familia = familia;
             this.genero = genero;
             this.especie = especie;
+        }
+        public Taxonomia(Taxonomia tax)
+        {
+            this.dominio = tax.dominio;
+            this.reino = tax.reino;
+            this.filo = tax.filo;
+            this.classe = tax.classe;
+            this.ordem = tax.ordem;
+            this.familia = tax.familia;
+            this.genero = tax.genero;
+            this.especie = tax.especie;
         }
     }
 }
