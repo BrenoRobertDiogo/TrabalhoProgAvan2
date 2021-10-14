@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace TrabalhoProgAvan2.models
 {
@@ -41,36 +42,125 @@ namespace TrabalhoProgAvan2.models
             this.Usuarios.Add(user);
         }
 
-        public Animal gerarRecomendacao(Animal animal)
+        /* 
+            .....
+            Como funciona:
+            É necessário ter visitado no mínimo dois animais (pegar tamanho lista)
+            Os valores serão uma média da nota que ela deu para todas as subclasses
+            A 2ª a se comparar vai ter a média com o maior da 1 pessoa e o mesmo tipo
+            .....
+        */
+        public Animal gerarRecomendacao(Usuario pessoaAtual, Animal animal)
         {
+            Console.WriteLine("\n\n\nasdasdasd\n\n\n\n");
 
-            /* 
-                .....
-                Como funciona:
-                É necessário ter visitado no mínimo dois animais (pegar tamanho lista)
-                Os valores serão uma média da nota que ela deu para todas as subclasses
-                A 2ª a se comparar vai ter a média com o maior da 1 pessoa e o mesmo tipo
-                .....
-            */
+            List<double> mediaSetoresAtual = this.mediaSetores(pessoaAtual);
+            /* Duas maiores notas dos setores */
+            List<int> maioresUserAtual = this.doisMaiores(mediaSetoresAtual);
+            /* Guardar dados do for */
+            double menorRotativo = 1000;
+            int indiceMenorRotativo = 0;
+            /* Verivica se a pessoa visitou mais de um setor
+                Caso não, ele da um Exception
+             */
+            if (this.podeRecomendar(mediaSetoresAtual))
+            {
+                throw new System.Exception("Recomendação indisponível, visite mais de uma classe.");
+            }
+
+            /* Ao final desse for teremos o índice e o valor da distancia entre as pessoas */
+            for (int i = 0; i < this.Usuarios.Count; i++)
+            {
+                /* 
+                    [x]----------------------------------------------------[x]
+                     | Pegar o 1º Maior do UserAtual como o 1º do Historico | 
+                     | Pegar o 2º Maior do UserAtual como o 2º do Historico |  
+                    [x]----------------------------------------------------[x]
+                */
+                Usuario rotativoAtual = this.Usuarios[i];
+                List<double> mediaSetoresRotativo = this.mediaSetores(rotativoAtual);
 
 
+                double distanciaResult = this.distanciaEuclidiana(
+                    Esp1User1: mediaSetoresAtual[maioresUserAtual[0]],
+                    Esp2User1: mediaSetoresAtual[maioresUserAtual[1]],
+                    Esp1User2: mediaSetoresRotativo[maioresUserAtual[0]],
+                    Esp2User2: mediaSetoresRotativo[maioresUserAtual[1]]
+                    );
+                /* Verificando qual tem a menor distância */
+                if (distanciaResult < menorRotativo)
+                {
+                    menorRotativo = distanciaResult;
+                    indiceMenorRotativo = i;
+                }
+            }
+
+            
+            
+            Usuario maisProximo = this.Usuarios[indiceMenorRotativo];
+            /* Guardar dados do for */
+            double maiorNota = 0.0;
+            Animal retornar = pessoaAtual.AnimaisVisitados[0]; // Valor aleatório só pra ter
+            /* Animal que essa pessoa mais gostou */
+            foreach (var item in maisProximo.AnimaisVisitados)
+            {
+                if (item.Nota > maiorNota)
+                {
+                    retornar  = item;
+                }
+            }
+
+
+            return retornar;
+        }
+        private double distanciaEuclidiana(double Esp1User1, double Esp2User1, double Esp1User2, double Esp2User2)
+        {
             /* DISTÂNCIA EUCLIDIANA */
-            // Fórmula: d=√∑ni=1(ai−bi)2
+            // Fórmula: √((x1 – x2)² + (y1 – y2)²)
 
-            /* Base pra utilizar depois */
-            double reptil, aves, mamifero, peixes;
-            reptil = 12d;   // TODO: Colocar os valores depois!
-            aves = 13d;     // TODO: Colocar os valores depois!
-            mamifero = 11d; // TODO: Colocar os valores depois!
-            peixes = 10d;   // TODO: Colocar os valores depois!
+            double esp1User1, esp2User1, // Espécie usuário 1
+                   esp1User2, esp2User2; // Espécie usuário 2
 
-            var distance = Math.Sqrt((Math.Pow(reptil - aves, 2) + Math.Pow(mamifero - peixes, 2)));
+            esp1User1 = Esp1User1; // TODO: Colocar os valores depois!
+            esp2User1 = Esp2User1; // TODO: Colocar os valores depois!
+            esp1User2 = Esp1User2; // TODO: Colocar os valores depois!
+            esp2User2 = Esp2User2; // TODO: Colocar os valores depois!
 
-            throw new System.Exception("TEM QUE IMPLEMENTAR ");
+            double distance = Math.Sqrt((Math.Pow(esp1User1 - esp2User1, 2) + Math.Pow(esp1User2 - esp2User2, 2)));
+            return distance;
+        }
+
+        private List<int> doisMaiores(List<double> lista)
+        {
+            List<double> listaV = lista;
+            // List<int> retornar = new List<int>();
+            double maiorValor1 = listaV.Max();
+            listaV.Remove(listaV.IndexOf(maiorValor1));
+            double maiorValor2 = listaV.Max();
+            return new List<int> { listaV.IndexOf(maiorValor1), listaV.IndexOf(maiorValor2) };
+
+        }
+
+        private bool podeRecomendar(List<double> mediaSetoresAtual)
+        {
+            int cont = 0;
+            Console.WriteLine(mediaSetoresAtual.Count+"\n\n\n\n");
+
+            for (int i = 0; i < mediaSetoresAtual.Count; i++)
+            {
+                if (mediaSetoresAtual[i] > 0)
+                {
+                    cont++;
+                }
+            }
+            return cont > 1;
         }
 
         private List<double> mediaSetores(Usuario pessoa)
         {
+            /* 
+                1 Réptil, 2 Aves, 3 Mamiferos, 3 Peixes
+            */
             double reptilSoma = 0;
             int reptilQnt = 0;
             double avesSoma = 0;
@@ -88,15 +178,18 @@ namespace TrabalhoProgAvan2.models
                 {
                     reptilSoma += item.Nota;
                     reptilQnt++;
-                } else if (item.GetType() == typeof(Aves))
+                }
+                else if (item.GetType() == typeof(Aves))
                 {
                     avesSoma += item.Nota;
                     avesQnt++;
-                } else if (item.GetType() == typeof(Mamiferos))
+                }
+                else if (item.GetType() == typeof(Mamiferos))
                 {
                     mamiferoSoma += item.Nota;
                     mamiferoQnt++;
-                } else if (item.GetType() == typeof(Peixes))
+                }
+                else if (item.GetType() == typeof(Peixes))
                 {
                     peixesSoma += item.Nota;
                     peixesQnt++;
@@ -104,15 +197,18 @@ namespace TrabalhoProgAvan2.models
 
             }
 
-            return new List<double> 
-            { 
-                Math.Round(reptilSoma / reptilQnt, 2), 
-                Math.Round(avesSoma / avesQnt, 2), 
+            // 
+
+            return new List<double>
+            {
+                Math.Round(reptilSoma / reptilQnt, 2),
+                Math.Round(avesSoma / avesQnt, 2),
                 Math.Round(mamiferoSoma / mamiferoQnt, 2),Math.
-                Round (peixesSoma / peixesQnt, 2) 
+                Round (peixesSoma / peixesQnt, 2)
             };
         }
 
+        /* FUNCIONANDO */
         private void adicionaPessoas(ref Usuario pessoa)
         {
             Random random = new Random();
@@ -184,15 +280,15 @@ namespace TrabalhoProgAvan2.models
 
 
             }
-            List<double> seila =  this.mediaSetores(pessoa);
-            Console.WriteLine($"===================");
-            
+            List<double> seila = this.mediaSetores(pessoa);
+            /* Console.WriteLine($"===================");
+
             Console.WriteLine(seila[0]);
             Console.WriteLine(seila[1]);
             Console.WriteLine(seila[2]);
             Console.WriteLine(seila[3]);
-            Console.WriteLine($"===================");
-            
+            Console.WriteLine($"==================="); */
+
 
         }
 

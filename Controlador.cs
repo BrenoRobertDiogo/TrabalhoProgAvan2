@@ -46,7 +46,8 @@ namespace TrabalhoProgAvan2
             }; */
 
             Console.Write(
-                        "[1] - Repteis" +
+                        "[0] - Recomendação" +
+                        "\n[1] - Repteis" +
                         "\n[2] - Peixes" +
                         "\n[3] - Mamiferos" +
                         "\n[4] - Aves\n" +
@@ -57,6 +58,19 @@ namespace TrabalhoProgAvan2
             int escolha = int.Parse(Console.ReadLine());
             switch (escolha)
             {
+                case 0:
+                    // Recomendação
+                    List<Animal> visited = this.user.AnimaisVisitados;
+                    if (visited.Count > 1)
+                    {
+                        
+                        Animal animalRecomendado = recomendacao.gerarRecomendacao(this.user, visited[visited.Count-1]);
+                        Console.WriteLine(animalRecomendado.taxonomia.especie);
+                        
+                    }
+                    
+                    break;
+
                 case 1:
                     // pega um Reptei aleatório da lista
                     Repteis RepteisAleatorio = new Repteis(RepteisTax[random.Next(0, RepteisTax.Count)]);
