@@ -11,11 +11,11 @@ namespace TrabalhoProgAvan2.models
         public Recomendacao()
         {
             this.Usuarios = new List<Usuario>();
-            Usuario p1 = new Usuario("Corsa", 13, 'C'); // corsa
-            Usuario p2 = new Usuario("Bife", 13, 'B'); // Bife
-            Usuario p3 = new Usuario("Life", 100, 'T'); // 2 lifes
-            Usuario p4 = new Usuario("Teste", 20, 'F'); // FEMALE
-            Usuario p5 = new Usuario("Teste3", 53, 'M'); // MEN
+            Usuario p1 = new Usuario("Maria", 19, 'F'); // corsa
+            Usuario p2 = new Usuario("Renato", 39, 'M'); // Bife
+            Usuario p3 = new Usuario("Carimbo", 45, 'M'); // 2 Espiritos
+            Usuario p4 = new Usuario("Xequira", 20, 'F'); // FEMALE
+            Usuario p5 = new Usuario("Brecesfield", 53, 'M'); // MEN
 
             this.adicionaPessoas(ref p1);
             p1.mostraAnimaisVisitados();
@@ -109,8 +109,6 @@ namespace TrabalhoProgAvan2.models
                     retornar  = item;
                 }
             }
-
-
             return retornar;
         }
         private double distanciaEuclidiana(double Esp1User1, double Esp2User1, double Esp1User2, double Esp2User2)
@@ -242,53 +240,37 @@ namespace TrabalhoProgAvan2.models
                 for (var j = 0; j < random.Next(0, 3); j++)
                 {
                     Repteis RepteisAleatorio = new Repteis(RepteisTax[random.Next(0, RepteisTax.Count)]);
-                    // Console.WriteLine(RepteisAleatorio.GetType());
 
                     RepteisAleatorio.Nota = random.Next(0, 10);
                     pessoa.AnimaisVisitados.Add(RepteisAleatorio);
 
-                    // Console.WriteLine($"asdasdasd");
                 }
                 for (var j = 0; j < random.Next(0, 3); j++)
                 {
                     Peixes PeixesAleatorio = new Peixes(PeixesTax[random.Next(0, PeixesTax.Count)]);
-                    // Console.WriteLine(PeixesAleatorio.GetType());
 
                     PeixesAleatorio.Nota = random.Next(0, 10);
                     pessoa.AnimaisVisitados.Add(PeixesAleatorio);
-                    // Console.WriteLine($"asdasdasd");
                 }
                 for (var j = 0; j < random.Next(0, 3); j++)
                 {
                     Mamiferos MamiferosAleatorio = new Mamiferos(MamiferosTax[random.Next(0, MamiferosTax.Count)]);
-                    // Console.WriteLine(MamiferosAleatorio.GetType());
 
                     MamiferosAleatorio.Nota = random.Next(0, 10);
                     pessoa.AnimaisVisitados.Add(MamiferosAleatorio);
-                    // Console.WriteLine($"asdasdasd");
                 }
                 for (var j = 0; j < random.Next(0, 3); j++)
                 {
                     Aves AvesAleatorio = new Aves(AvesTax[random.Next(0, AvesTax.Count)]);
-                    // Console.WriteLine(AvesAleatorio.GetType());
 
                     AvesAleatorio.Nota = random.Next(0, 10);
                     pessoa.AnimaisVisitados.Add(AvesAleatorio);
-                    // Console.WriteLine($"asdasdasd");
 
                 }
 
 
             }
             List<double> seila = this.mediaSetores(pessoa);
-            /* Console.WriteLine($"===================");
-
-            Console.WriteLine(seila[0]);
-            Console.WriteLine(seila[1]);
-            Console.WriteLine(seila[2]);
-            Console.WriteLine(seila[3]);
-            Console.WriteLine($"==================="); */
-
 
         }
 

@@ -31,19 +31,20 @@ namespace TrabalhoProgAvan2
 
             // Répteis (Tartaruga cabeçuda)
             RepteisTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "Reptilia", "Testudines", "Cheloniidae", "Caretta Rafinesque", "Tartaruga cabeçuda"));
+            RepteisTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "Reptilia", "Testudines", "Cheloniidae", "Caretta Rafinesque", "Calango"));
+            RepteisTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "Reptilia", "Testudines", "Cheloniidae", "Caretta Rafinesque", "Jararaca"));
             // Peixe
             PeixesTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "Actinopterygii", "Perciformes", "Cichlidae", "Oreochromis", "Tilapia"));
+            PeixesTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "Actinopterygii", "Perciformes", "Cichlidae", "Oreochromis", "Dourado"));
+            PeixesTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "Actinopterygii", "Perciformes", "Cichlidae", "Oreochromis", "Piranha"));
             // MamiferosTax    
             MamiferosTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "Mammalia", "Primates", "Homnidae", "Pam", "Chimpanzé"));
+            MamiferosTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "Mammalia", "Primates", "Homnidae", "Pam", "Canguru"));
+            MamiferosTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "Mammalia", "Primates", "Homnidae", "Pam", "Girafa"));
             // AvesTax 
             AvesTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "AvesTax", "Ciconiiformes Falconiformes", "Accipitridae Falconidae", "Buteo", "Gavião-asa-de-telha"));
-
-            /* List<Animal> setores = new List<Animal>{
-                new RepteisTax(RepteisTax[0]),
-                new PeixesTax(PeixesTax[0]),
-                new MamiferosTax(MamiferosTax[0]),
-                new AvesTax(AvesTax[0])
-            }; */
+            AvesTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "AvesTax", "Ciconiiformes Falconiformes", "Accipitridae Falconidae", "Buteo", "Tucano"));
+            AvesTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "AvesTax", "Ciconiiformes Falconiformes", "Accipitridae Falconidae", "Buteo", "Pica-Pau"));
 
             Console.Write(
                         "[0] - Recomendação" +
@@ -68,7 +69,7 @@ namespace TrabalhoProgAvan2
                         Console.WriteLine(animalRecomendado.taxonomia.especie);
                         
                     }
-                    
+                    Iniciar(recomendacao, this.user == null);
                     break;
 
                 case 1:
@@ -93,6 +94,10 @@ namespace TrabalhoProgAvan2
                     break;
                 case 5:
                     // Mostra a taxonomia do animal atual
+                    if (this.user.AnimaisVisitados.Count < 1) {
+                        Console.WriteLine("Você ainda não visitou nenhum animal!");
+                        break;
+                    }
                     this.user.mostraTaxonomiaAnimal();
                     break;
                 case 6:
@@ -100,13 +105,29 @@ namespace TrabalhoProgAvan2
                     this.user.mostraAnimaisVisitados();
                     break;
                 default:
+                    Console.WriteLine("Você digitou um valor inválido, tenta de novo aí!");
                     break;
             }
 
-
+            if (this.user.AnimaisVisitados.Count > 1 && escolha < 5) {
+                Controlador.perguntaNota(this.user);
+            }
             
             Controlador.digitarContinuar();
             Iniciar(recomendacao, this.user == null);
+        }
+
+        private static double perguntaNota(Usuario user) {
+            Console.WriteLine("Antes de passar para o próximo animal de uma nota para o animal que você acabou de ver: ");
+            double resultadoNota = double.Parse(Console.ReadLine());
+            if (resultadoNota > 0 && resultadoNota < 11) {
+                return resultadoNota;
+            }
+            else
+                {
+                    Console.WriteLine("Valores entre 0 e 11 somente.");
+                    return Controlador.perguntaNota(user);
+                }
         }
 
         private static Usuario criaUsuario()

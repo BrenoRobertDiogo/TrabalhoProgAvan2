@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\breno\\Desktop\\Estudos\\1AFaculdade\\Semestre3\\Programação Avançada\\Prova2\\TrabalhoProgAvan2\\TrabalhoProgAvan2.csproj": {}
+    "/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/TrabalhoProgAvan2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\breno\\Desktop\\Estudos\\1AFaculdade\\Semestre3\\Programação Avançada\\Prova2\\TrabalhoProgAvan2\\TrabalhoProgAvan2.csproj": {
+    "/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/TrabalhoProgAvan2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\breno\\Desktop\\Estudos\\1AFaculdade\\Semestre3\\Programação Avançada\\Prova2\\TrabalhoProgAvan2\\TrabalhoProgAvan2.csproj",
+        "projectUniqueName": "/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/TrabalhoProgAvan2.csproj",
         "projectName": "TrabalhoProgAvan2",
-        "projectPath": "C:\\Users\\breno\\Desktop\\Estudos\\1AFaculdade\\Semestre3\\Programação Avançada\\Prova2\\TrabalhoProgAvan2\\TrabalhoProgAvan2.csproj",
-        "packagesPath": "C:\\Users\\breno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\breno\\Desktop\\Estudos\\1AFaculdade\\Semestre3\\Programação Avançada\\Prova2\\TrabalhoProgAvan2\\obj\\",
+        "projectPath": "/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/TrabalhoProgAvan2.csproj",
+        "packagesPath": "/home/caiomsg/.nuget/packages/",
+        "outputPath": "/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\breno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/caiomsg/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

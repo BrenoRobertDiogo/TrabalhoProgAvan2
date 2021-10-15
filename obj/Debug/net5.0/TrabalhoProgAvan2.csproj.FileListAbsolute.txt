@@ -1,16 +1,32 @@
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\bin\Debug\net5.0\TrabalhoProgAvan2.exe
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\bin\Debug\net5.0\TrabalhoProgAvan2.deps.json
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\bin\Debug\net5.0\TrabalhoProgAvan2.runtimeconfig.json
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\bin\Debug\net5.0\TrabalhoProgAvan2.runtimeconfig.dev.json
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\bin\Debug\net5.0\TrabalhoProgAvan2.dll
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\bin\Debug\net5.0\ref\TrabalhoProgAvan2.dll
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\bin\Debug\net5.0\TrabalhoProgAvan2.pdb
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\obj\Debug\net5.0\TrabalhoProgAvan2.csproj.AssemblyReference.cache
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\obj\Debug\net5.0\TrabalhoProgAvan2.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\obj\Debug\net5.0\TrabalhoProgAvan2.AssemblyInfoInputs.cache
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\obj\Debug\net5.0\TrabalhoProgAvan2.AssemblyInfo.cs
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\obj\Debug\net5.0\TrabalhoProgAvan2.csproj.CoreCompileInputs.cache
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\obj\Debug\net5.0\TrabalhoProgAvan2.dll
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\obj\Debug\net5.0\ref\TrabalhoProgAvan2.dll
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\obj\Debug\net5.0\TrabalhoProgAvan2.pdb
-C:\Users\breno\Desktop\Estudos\1AFaculdade\Semestre3\Programação Avançada\Prova2\TrabalhoProgAvan2\obj\Debug\net5.0\TrabalhoProgAvan2.genruntimeconfig.cache
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.exe
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.deps.json
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.runtimeconfig.json
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.runtimeconfig.dev.json
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.dll
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/bin/Debug/net5.0/ref/TrabalhoProgAvan2.dll
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.pdb
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.csproj.AssemblyReference.cache
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.AssemblyInfoInputs.cache
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.AssemblyInfo.cs
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.csproj.CoreCompileInputs.cache
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.dll
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/obj/Debug/net5.0/ref/TrabalhoProgAvan2.dll
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.pdb
+C:/Users/breno/Desktop/Estudos/1AFaculdade/Semestre3/Programação Avançada/Prova2/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.genruntimeconfig.cache
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.deps.json
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.runtimeconfig.json
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.runtimeconfig.dev.json
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.dll
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/bin/Debug/net5.0/ref/TrabalhoProgAvan2.dll
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/bin/Debug/net5.0/TrabalhoProgAvan2.pdb
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.csproj.AssemblyReference.cache
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.GeneratedMSBuildEditorConfig.editorconfig
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.AssemblyInfoInputs.cache
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.AssemblyInfo.cs
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.csproj.CoreCompileInputs.cache
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.dll
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/obj/Debug/net5.0/ref/TrabalhoProgAvan2.dll
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.pdb
+/home/caiomsg/Documentos/GitHub/TrabalhoProgAvan2/obj/Debug/net5.0/TrabalhoProgAvan2.genruntimeconfig.cache
