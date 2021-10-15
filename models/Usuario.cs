@@ -28,11 +28,7 @@ namespace TrabalhoProgAvan2.models
         {
             this.Atual = animal;
             this.AnimaisVisitados.Add(animal);
-
-            // animal.locomover();
-            Console.WriteLine($"Testezinho {animal.taxonomia.especie}");
-            // this.mostraAnimaisVisitados();
-            // this.mostraTaxonomiaAnimal();
+            Console.WriteLine($"Animal: {animal.taxonomia.especie}");
 
 
         }

@@ -46,55 +46,98 @@ namespace TrabalhoProgAvan2
             AvesTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "AvesTax", "Ciconiiformes Falconiformes", "Accipitridae Falconidae", "Buteo", "Tucano"));
             AvesTax.Add(new Taxonomia("Eukaria", "Animalia", "Chordata", "AvesTax", "Ciconiiformes Falconiformes", "Accipitridae Falconidae", "Buteo", "Pica-Pau"));
 
-            Console.Write(
-                        "[0] - Recomendação" +
-                        "\n[1] - Repteis" +
-                        "\n[2] - Peixes" +
-                        "\n[3] - Mamiferos" +
-                        "\n[4] - Aves\n" +
-                        "====            OPERAÇÕES         ====\n"+
-                        "[5] Taxonomia do animal atual | [6] Animais que visitei\n"+
-                        "\nEscolha o número: "
-                    );
+
+            this.corVermelha("0");
+            Console.WriteLine($" - Recomendação");
+            Console.WriteLine($"======================================");
+
+            Console.WriteLine($"{this.corAzul("1")} - Repteis");
+
+            Console.WriteLine($"{this.corAzul("2")} - Peixes");
+
+            Console.WriteLine($"{this.corAzul("3")} - Mamiferos");
+
+            Console.WriteLine($"{this.corAzul("4")} - Aves");
+
+            Console.WriteLine($"====            OPERAÇÕES         ====");
+            Console.WriteLine($"{this.corVerde("5")} Taxonomia do animal atual");
+            Console.WriteLine($"{this.corVerde("6")} - Animais que visitei");
+            Console.Write($"\nEscolha o número:");
             int escolha = int.Parse(Console.ReadLine());
+            // Console.Clear();
+            int mandar;
             switch (escolha)
             {
                 case 0:
                     // Recomendação
                     List<Animal> visited = this.user.AnimaisVisitados;
+                    /* Visitou mais de um animal */
                     if (visited.Count > 1)
                     {
-                        
-                        Animal animalRecomendado = recomendacao.gerarRecomendacao(this.user, visited[visited.Count-1]);
-                        Console.WriteLine(animalRecomendado.taxonomia.especie);
-                        
+
+                        Animal animalRecomendado = recomendacao.gerarRecomendacao(this.user, visited[visited.Count - 1]);
+                        Console.Clear();
+                        Console.WriteLine($"=======================================");
+                        Console.WriteLine($"Recomendamos {animalRecomendado.taxonomia.especie}");
+                        Console.WriteLine($"=======================================");
+                        Controlador.digitarContinuar();
                     }
                     Iniciar(recomendacao, this.user == null);
                     break;
 
                 case 1:
                     // pega um Reptei aleatório da lista
-                    Repteis RepteisAleatorio = new Repteis(RepteisTax[random.Next(0, RepteisTax.Count)]);
+                    for (int i = 0; i < RepteisTax.Count; i++)
+                    {
+                        Console.WriteLine($"{this.corAzul($"{i}")} - {RepteisTax[i].especie}");
+                    }
+                    Console.Write($"Animal a ser escolhido: ");
+
+                    mandar = int.Parse(Console.ReadLine());
+                    Repteis RepteisAleatorio = new Repteis(RepteisTax[mandar]);
                     this.user.visitarAnimal(RepteisAleatorio);
+
+
                     break;
                 case 2:
                     // pega um Peixe aleatório da lista
-                    Peixes PeixesAleatorio = new Peixes(PeixesTax[random.Next(0, PeixesTax.Count)]);
+                    for (int i = 0; i < PeixesTax.Count; i++)
+                    {
+                        Console.WriteLine($"{this.corAzul($"{i}")} - {PeixesTax[i].especie}");
+                    }
+                    Console.Write($"Animal a ser escolhido: ");
+
+                    mandar = int.Parse(Console.ReadLine());
+                    Peixes PeixesAleatorio = new Peixes(PeixesTax[mandar]);
                     this.user.visitarAnimal(PeixesAleatorio);
                     break;
                 case 3:
                     // pega um Mamifero aleatório da lista
-                    Mamiferos MamiferosAleatorio = new Mamiferos(MamiferosTax[random.Next(0, MamiferosTax.Count)]);
+                    for (int i = 0; i < MamiferosTax.Count; i++)
+                    {
+                        Console.WriteLine($"{this.corAzul($"{i}")} - {MamiferosTax[i].especie}");
+                    }
+                    Console.Write($"Animal a ser escolhido: ");
+                    mandar = int.Parse(Console.ReadLine());
+                    Mamiferos MamiferosAleatorio = new Mamiferos(MamiferosTax[mandar]);
                     this.user.visitarAnimal(MamiferosAleatorio);
                     break;
                 case 4:
                     // pega um Ave aleatório da lista
-                    Aves AvesAleatorio = new Aves(AvesTax[random.Next(0, AvesTax.Count)]);
+                    for (int i = 0; i < AvesTax.Count; i++)
+                    {
+                        Console.WriteLine($"{this.corAzul($"{i}")} - {AvesTax[i].especie}");
+                    }
+                    Console.Write($"Animal a ser escolhido: ");
+
+                    mandar = int.Parse(Console.ReadLine());
+                    Aves AvesAleatorio = new Aves(AvesTax[mandar]);
                     this.user.visitarAnimal(AvesAleatorio);
                     break;
                 case 5:
                     // Mostra a taxonomia do animal atual
-                    if (this.user.AnimaisVisitados.Count < 1) {
+                    if (this.user.AnimaisVisitados.Count < 1)
+                    {
                         Console.WriteLine("Você ainda não visitou nenhum animal!");
                         break;
                     }
@@ -105,30 +148,59 @@ namespace TrabalhoProgAvan2
                     this.user.mostraAnimaisVisitados();
                     break;
                 default:
-                    Console.WriteLine("Você digitou um valor inválido, tenta de novo aí!");
+                    Console.WriteLine("Você digitou um valor inválido!");
+                    Controlador.digitarContinuar();
                     break;
             }
 
-            if (this.user.AnimaisVisitados.Count > 1 && escolha < 5) {
+            if (this.user.AnimaisVisitados.Count > 1 && escolha < 5)
+            {
                 Controlador.perguntaNota(this.user);
             }
-            
+
             Controlador.digitarContinuar();
             Iniciar(recomendacao, this.user == null);
         }
 
-        private static double perguntaNota(Usuario user) {
-            Console.WriteLine("Antes de passar para o próximo animal de uma nota para o animal que você acabou de ver: ");
+
+        private static double perguntaNota(Usuario user)
+        {
+            Console.Clear();
+            Console.Write($"De 0 a 10, quando você gostou do {user.AnimaisVisitados[user.AnimaisVisitados.Count - 2].taxonomia.especie} : ");
             double resultadoNota = double.Parse(Console.ReadLine());
-            if (resultadoNota > 0 && resultadoNota < 11) {
+            if (resultadoNota > 0 && resultadoNota < 11)
+            {
                 return resultadoNota;
             }
             else
-                {
-                    Console.WriteLine("Valores entre 0 e 11 somente.");
-                    return Controlador.perguntaNota(user);
-                }
+            {
+                Console.WriteLine("Valores entre 0 e 11 somente.");
+                return Controlador.perguntaNota(user);
+            }
         }
+
+        private string corVermelha(string texto)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(texto);
+            Console.ResetColor();
+            return "";
+        }
+        private string corVerde(string texto)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(texto);
+            Console.ResetColor();
+            return "";
+        }
+        private string corAzul(string texto)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write(texto);
+            Console.ResetColor();
+            return "";
+        }
+
 
         private static Usuario criaUsuario()
         {
@@ -160,7 +232,7 @@ namespace TrabalhoProgAvan2
                 "======================================\n" +
                 "====           DETALHES           ====\n" +
                 "======================================\n\n" +
-                               ex.Message + "\n\n" 
+                               ex.Message + "\n\n"
                 );
                 Controlador.digitarContinuar();
                 criaUsuario();
@@ -170,14 +242,15 @@ namespace TrabalhoProgAvan2
 
         }
 
-        public static void digitarContinuar() {
+        public static void digitarContinuar()
+        {
             Console.Write(
                 "======================================\n" +
                 "====     DIGITE QUALQUER TECLA    ====\n" +
                 "======================================\n"
                 );
-                Console.ReadKey();
-                Console.Clear();
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }

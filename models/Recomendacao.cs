@@ -18,15 +18,15 @@ namespace TrabalhoProgAvan2.models
             Usuario p5 = new Usuario("Brecesfield", 53, 'M'); // MEN
 
             this.adicionaPessoas(ref p1);
-            p1.mostraAnimaisVisitados();
+            // p1.mostraAnimaisVisitados();
             this.adicionaPessoas(ref p2);
-            p2.mostraAnimaisVisitados();
+            // p2.mostraAnimaisVisitados();
             this.adicionaPessoas(ref p3);
-            p3.mostraAnimaisVisitados();
+            // p3.mostraAnimaisVisitados();
             this.adicionaPessoas(ref p4);
-            p4.mostraAnimaisVisitados();
+            // p4.mostraAnimaisVisitados();
             this.adicionaPessoas(ref p5);
-            p5.mostraAnimaisVisitados();
+            // p5.mostraAnimaisVisitados();
 
             this.Usuarios.Add(p1);
             this.Usuarios.Add(p2);
@@ -52,7 +52,6 @@ namespace TrabalhoProgAvan2.models
         */
         public Animal gerarRecomendacao(Usuario pessoaAtual, Animal animal)
         {
-            Console.WriteLine("\n\n\nasdasdasd\n\n\n\n");
 
             List<double> mediaSetoresAtual = this.mediaSetores(pessoaAtual);
             /* Duas maiores notas dos setores */
@@ -142,7 +141,6 @@ namespace TrabalhoProgAvan2.models
         private bool podeRecomendar(List<double> mediaSetoresAtual)
         {
             int cont = 0;
-            Console.WriteLine(mediaSetoresAtual.Count+"\n\n\n\n");
 
             for (int i = 0; i < mediaSetoresAtual.Count; i++)
             {
@@ -170,8 +168,6 @@ namespace TrabalhoProgAvan2.models
 
             foreach (Animal item in pessoa.AnimaisVisitados)
             {
-                // Console.WriteLine(item.GetType());
-                // Console.WriteLine(item.GetType() == typeof(Aves));
                 if (item.GetType() == typeof(Repteis))
                 {
                     reptilSoma += item.Nota;
