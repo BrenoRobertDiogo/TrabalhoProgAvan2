@@ -11,10 +11,10 @@ namespace TrabalhoProgAvan2.models
         public Recomendacao()
         {
             this.Usuarios = new List<Usuario>();
-            Usuario p1 = new Usuario("Maria", 19, 'F'); // corsa
-            Usuario p2 = new Usuario("Renato", 39, 'M'); // Bife
-            Usuario p3 = new Usuario("Carimbo", 45, 'M'); // 2 Espiritos
-            Usuario p4 = new Usuario("Xequira", 20, 'F'); // FEMALE
+            Usuario p1 = new Usuario("Maria", 19, 'F');       // corsa
+            Usuario p2 = new Usuario("Renato", 39, 'M');      // Bife
+            Usuario p3 = new Usuario("Carimbo", 45, 'M');     // 2 Espiritos
+            Usuario p4 = new Usuario("Xequira", 20, 'F');     // FEMALE
             Usuario p5 = new Usuario("Brecesfield", 53, 'M'); // MEN
 
             this.adicionaPessoas(ref p1);
@@ -52,7 +52,6 @@ namespace TrabalhoProgAvan2.models
         */
         public Animal gerarRecomendacao(Usuario pessoaAtual, Animal animal)
         {
-
             List<double> mediaSetoresAtual = this.mediaSetores(pessoaAtual);
             /* Duas maiores notas dos setores */
             List<int> maioresUserAtual = this.doisMaiores(mediaSetoresAtual);
@@ -118,10 +117,10 @@ namespace TrabalhoProgAvan2.models
             double esp1User1, esp2User1, // Espécie usuário 1
                    esp1User2, esp2User2; // Espécie usuário 2
 
-            esp1User1 = Esp1User1; // TODO: Colocar os valores depois!
-            esp2User1 = Esp2User1; // TODO: Colocar os valores depois!
-            esp1User2 = Esp1User2; // TODO: Colocar os valores depois!
-            esp2User2 = Esp2User2; // TODO: Colocar os valores depois!
+            esp1User1 = Esp1User1;
+            esp2User1 = Esp2User1;
+            esp1User2 = Esp1User2;
+            esp2User2 = Esp2User2;
 
             double distance = Math.Sqrt((Math.Pow(esp1User1 - esp2User1, 2) + Math.Pow(esp1User2 - esp2User2, 2)));
             return distance;
@@ -154,8 +153,8 @@ namespace TrabalhoProgAvan2.models
 
         private List<double> mediaSetores(Usuario pessoa)
         {
-            /* 
-                1 Réptil, 2 Aves, 3 Mamiferos, 3 Peixes
+            /*
+                1 Réptil, 2 Aves, 3 Mamiferos, 4 Peixes
             */
             double reptilSoma = 0;
             int reptilQnt = 0;
@@ -202,7 +201,6 @@ namespace TrabalhoProgAvan2.models
             };
         }
 
-        /* FUNCIONANDO */
         private void adicionaPessoas(ref Usuario pessoa)
         {
             Random random = new Random();
@@ -272,9 +270,3 @@ namespace TrabalhoProgAvan2.models
 
     }
 }
-
-/* Repteis  ====   Repteis
-Peixes  ====   Peixes
-Mamiferos  ====   Mamiferos
-Aves  ====   Aves
- */
